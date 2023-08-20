@@ -1,0 +1,19 @@
+header {
+  box-shadow: 0px 0px 15px 1px #c3c3c380;
+}
+
+div.btn {
+  div {
+    transition: .5s;
+    cursor: pointer;
+  }
+
+  div:nth-child(2):hover {
+    opacity: .5;
+  }
+
+  div:nth-child(1):hover {
+    color: #94A0A6;
+    border: 1px solid #94A0A6;
+  }
+}

@@ -1,0 +1,52 @@
+div.presentation {
+  div.title-container {
+    div.title {
+      h1 {
+    
+        line-height: 3.25rem;
+    
+        span:after {
+          content: "";
+          width: 100%;
+          height: 2.5rem;
+          background-image: url(../assets/ink.svg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          display: block;
+          position: absolute;
+          bottom: -40%;
+          z-index: -1;
+        }
+    
+      }
+    }
+  
+    p {
+      line-height: 1.095rem;
+    }
+  }
+
+  form {
+
+    width: 115%;
+
+    input {
+      width: 110%;
+    }
+  }
+}
+
+// .card-area {
+//   min-width: 100vw;
+// }
+
+.carrossel-container {
+  transition: left .5s ease-in-out;
+  left: 0;
+}
+
+@media (max-width: 639px) {
+  form {
+    width: 100% !important;
+  }
+}
