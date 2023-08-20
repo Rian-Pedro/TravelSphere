@@ -6,15 +6,21 @@ import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Home from './routes/home.jsx';
 
-const routes = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      }
+    ]
   }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={routes}/>
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )
