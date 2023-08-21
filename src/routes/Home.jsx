@@ -2,21 +2,29 @@ import "./Home.scss"
 
 import { useState, useRef } from "react";
 
-import { FaMapMarkedAlt } from "react-icons/fa";
+import { FaFacebook, FaMapMarkedAlt } from "react-icons/fa";
 import { BsFillCalendarDateFill, BsDashLg, BsSearch, BsInstagram, BsTwitter, BsFacebook, BsArrowLeftCircleFill, BsArrowLeftCircle, BsArrowRightCircleFill, BsArrowRightCircle } from "react-icons/bs";
 
+import whiteLogo from "../assets/whiteLogo.svg";
 import imgBeach from "../assets/beachImg.png";
 import imgToronto from "../assets/toronto.svg";
+import imgTokyo from "../assets/tokyo.svg";
+import imgOia from "../assets/oia.svg";
+import imgVeneza from "../assets/veneza.svg";
 import imgNature from "../assets/nature.svg";
 import imgFolha from "../assets/folha.svg";
 import imgLetter from "../assets/letter.svg";
+import imgSaori from "../assets/saori.svg";
 import Card from "../components/Card";
 import CardPremium from "../components/CardPremium";
 import { Link } from "react-router-dom";
+import CardClient from "../components/CardClient";
+import { useSlide } from "../hooks/useSlide";
 
 const Home = () => {
 
   const carrosselRef = useRef(null);
+  const containerClients = useRef(null);
   const [canLeft, setCanLeft] = useState(false);
   const [canRight, setCanRight] = useState(true);
 
@@ -40,6 +48,8 @@ const Home = () => {
     setCanLeft(parseInt(carrosselRef.current.style.left || 0, 10) < 0);
     setCanRight(!(parseInt(carrosselRef.current.style.left || 0, 10) < -((clientW * 0.85))));
   }
+
+  const { grab, hovering, moveSlide } = useSlide(containerClients);
 
   return (
     <main className="min-h-screen">
@@ -133,15 +143,11 @@ const Home = () => {
 
             <div className="carrossel-container flex gap-3 sm:gap-14 absolute" ref={carrosselRef}>
               <Card src={imgToronto} name="Toronto, Canadá" price="2000" starCount="4,5"/>
-              <Card src={imgToronto} name="Toronto, Canadá" price="2000" starCount="4,5"/>
-              <Card src={imgToronto} name="Toronto, Canadá" price="2000" starCount="4,5"/>
-              <Card src={imgToronto} name="Toronto, Canadá" price="2000" starCount="4,5"/>
-              <Card src={imgToronto} name="Toronto, Canadá" price="2000" starCount="4,5"/>
-              <Card src={imgToronto} name="Toronto, Canadá" price="2000" starCount="4,5"/>
-              <Card src={imgToronto} name="Toronto, Canadá" price="2000" starCount="4,5"/>
-              <Card src={imgToronto} name="Toronto, Canadá" price="2000" starCount="4,5"/>
-              <Card src={imgToronto} name="Toronto, Canadá" price="2000" starCount="4,5"/>
-              <Card src={imgToronto} name="Toronto, Canadá" price="2000" starCount="4,5"/>
+              <Card src={imgTokyo} name="Tokyo, Japão" price="3000" starCount="4,5"/>
+              <Card src={imgOia} name="Oia, Grécia" price="3000" starCount="4,5"/>
+              <Card src={imgVeneza} name="Veneza, Itália" price="2000" starCount="4,5"/>
+              <Card src={imgVeneza} name="Veneza, Itália" price="2000" starCount="4,5"/>
+              <Card src={imgVeneza} name="Veneza, Itália" price="2000" starCount="4,5"/>
             </div>
 
           </div>
@@ -161,8 +167,8 @@ const Home = () => {
           <div className="grid justify-center sm:grid-cols-2 gap-y-9 gap-x-8">
 
             <CardPremium num="1" name="Experiência Personalizada" desc="Nossos especialistas criam jornadas feitas sob medida para você, atendendo aos seus desejos e sonhos."/>
-            <CardPremium num="1" name="Experiência Personalizada" desc="Nossos especialistas criam jornadas feitas sob medida para você, atendendo aos seus desejos e sonhos."/>
-            <CardPremium num="1" name="Experiência Personalizada" desc="Nossos especialistas criam jornadas feitas sob medida para você, atendendo aos seus desejos e sonhos."/>
+            <CardPremium num="2" name="Destinos Exclusivos" desc="Explore cantos raros do mundo, de praias secretas a cidades encantadoras, vivendo momentos autênticos."/>
+            <CardPremium num="3" name="Serviço de Qualidade Superior" desc="Desde o início até o retorno, garantimos assistência impecável para uma viagem tranquila e inesquecível."/>
 
           </div>
         </div>
@@ -184,6 +190,30 @@ const Home = () => {
         </div>
         
       </section>
+      
+      <section className="clients px-24 py-12 overflow-hidden">
+
+        <h1 className="text-3xl font-semibold text-center mb-16">O que nossos clientes falam</h1>
+
+        <div className="relative overflow-auto h-100">
+
+          <div 
+            className="flex absolute items-center h-full gap-14 cursor-grab left-0" 
+            ref={containerClients} 
+            onMouseDown={(e) => grab(e)} 
+            onMouseUp={() => hovering()} 
+            onMouseMove={(e) => moveSlide(e)}
+          >
+            <CardClient name="Saori Souza" desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, nihil quis officia ipsa facere labore modi maxime incidunt accusamus ratione eum eaque? Quam inventore error voluptatem nulla dolor ex minus" src={imgSaori} starCount="50%" />
+            <CardClient name="Saori Souza" desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, nihil quis officia ipsa facere labore modi maxime incidunt accusamus ratione eum eaque? Quam inventore error voluptatem nulla dolor ex minus" src={imgSaori} starCount="20%" />
+            <CardClient name="Saori Souza" desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, nihil quis officia ipsa facere labore modi maxime incidunt accusamus ratione eum eaque? Quam inventore error voluptatem nulla dolor ex minus" src={imgSaori} starCount="100%" />
+            <CardClient name="Saori Souza" desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, nihil quis officia ipsa facere labore modi maxime incidunt accusamus ratione eum eaque? Quam inventore error voluptatem nulla dolor ex minus" src={imgSaori} starCount="80%" />
+            <CardClient name="Saori Souza" desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, nihil quis officia ipsa facere labore modi maxime incidunt accusamus ratione eum eaque? Quam inventore error voluptatem nulla dolor ex minus" src={imgSaori} starCount="50%" />
+          </div>
+
+        </div>
+        
+      </section>
 
       <section className="newsletter bg-blue2 flex justify-center items-center gap-24 py-14">
 
@@ -202,6 +232,38 @@ const Home = () => {
         </div>
 
       </section>
+
+      <footer className="bg-slate-950 text-white flex justify-between items-start py-32 px-16">
+
+        <img src={whiteLogo} alt="logo" />
+
+        <div className="flex gap-16">
+          
+          <ul className="text-lg">
+            <h1 className="font-semibold mb-3">Companhia</h1>
+            <li className="font-light">Sobre Nós</li>
+            <li className="font-light">Blog</li>
+            <li className="font-light">Pacotes</li>
+            <li className="font-light">Comunidade</li>
+          </ul>
+
+          <ul className="text-lg">
+            <h1 className="font-semibold mb-3">Ajuda</h1>
+            <li className="font-light">FAQ</li>
+            <li className="font-light">Suporte</li>
+            <li className="font-light">Política De Uso</li>
+          </ul>
+
+          <ul className="text-lg">
+            <h1 className="font-semibold mb-3">Nos Siga</h1>
+            <li className="flex items-center gap-2"><BsFacebook /> Facebook</li>
+            <li className="flex items-center gap-2"><BsInstagram /> Instagram</li>
+            <li className="flex items-center gap-2"><BsTwitter /> Twitter</li>
+          </ul>
+
+        </div>
+
+      </footer>
 
     </main>
   )

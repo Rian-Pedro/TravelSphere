@@ -6,6 +6,18 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        "center": "0px 0px 50px 0px rgba(0, 172, 193, 0.25)"
+      },
+      borderRadius: {
+        "100": "100%"
+      },
+      width: {
+        "100": "30rem"
+      },
+      height: {
+        "100": "30rem"
+      },
       minWidth: {
         "min-w-2/4": "50%"
       },
