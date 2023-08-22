@@ -239,11 +239,11 @@ const Home = () => {
 
       </section>
 
-      <footer className="bg-slate-950 text-white flex flex-col gap-20 justify-between items-center sm:items-start py-32 px-16">
+      <footer className="bg-slate-950 text-white flex flex-col sm:flex-row gap-20 justify-between items-center sm:items-start py-32 px-16">
 
         <img src={whiteLogo} alt="logo" />
 
-        <div className="flex gap-16 flex-col">
+        <div className="flex gap-16 flex-col sm:flex-row">
           
           <ul className="text-lg text-center">
             <h1 className="font-semibold mb-3">Companhia</h1>
