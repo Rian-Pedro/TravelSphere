@@ -7,12 +7,12 @@ import { BsFillCalendarDateFill, BsDashLg, BsSearch, BsInstagram, BsTwitter, BsF
 
 import whiteLogo from "../assets/whiteLogo.svg";
 import imgBeach from "../assets/beachImg.png";
-import imgToronto from "../assets/toronto.svg";
-import imgTokyo from "../assets/tokyo.svg";
-import imgOia from "../assets/oia.svg";
-import imgVeneza from "../assets/veneza.svg";
-import imgNature from "../assets/nature.svg";
-import imgFolha from "../assets/folha.svg";
+import imgToronto from "../assets/toronto.png";
+import imgTokyo from "../assets/tokyo.png";
+import imgOia from "../assets/oia.png";
+import imgVeneza from "../assets/veneza.png";
+import imgNature from "../assets/nature.png";
+import imgFolha from "../assets/folha.png";
 import imgLetter from "../assets/letter.svg";
 import imgSaori from "../assets/saori.svg";
 import Card from "../components/Card";
