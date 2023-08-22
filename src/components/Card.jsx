@@ -1,10 +1,13 @@
 import { BsFillStarFill } from "react-icons/bs";
 
+import Lazy from "./Lazy";
+
 const Card = ({ src, name, price, starCount }) => {
   return (
     <div className="w-64 select-none">
-      <div className="img">
-        <img src={src} alt={name} className="rounded-md" />
+      <div className="img w-64 h-64">
+        <Lazy src={src} alt={name} wxs="full" hxs="full"/>
+        {/* <img src={src} alt={name} className="rounded-md" /> */}
       </div>
 
       <div className="flex justify-between mt-3">

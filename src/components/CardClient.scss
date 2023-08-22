@@ -1,0 +1,7 @@
+div.container-cliente {
+  transition: box-shadow .3s;
+
+  &:hover {
+    box-shadow: 0px 0px 50px 0px rgba(0, 172, 193, 0.25);
+  }
+}

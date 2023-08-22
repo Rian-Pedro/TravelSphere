@@ -1,0 +1,28 @@
+.lazy-container {
+  div {
+    background-image: linear-gradient(100deg, #cdcdcd, #b8b8b8, #888888);
+    background-size: 200%;
+    // animation: loading 1s alternate infinite;
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}

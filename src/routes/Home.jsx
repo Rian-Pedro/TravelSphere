@@ -20,6 +20,7 @@ import CardPremium from "../components/CardPremium";
 import { Link } from "react-router-dom";
 import CardClient from "../components/CardClient";
 import { useSlide } from "../hooks/useSlide";
+import Lazy from "../components/Lazy";
 
 const Home = () => {
 
@@ -49,7 +50,7 @@ const Home = () => {
     setCanRight(!(parseInt(carrosselRef.current.style.left || 0, 10) < -((clientW * 0.85))));
   }
 
-  const { grab, hovering, moveSlide } = useSlide(containerClients);
+  const { handleMouseDown, handleMouseUp, handleMouseMove } = useSlide(containerClients);
 
   return (
     <main className="min-h-screen">
@@ -109,7 +110,9 @@ const Home = () => {
 
         </div>
 
-        <img src={imgBeach} alt="praia" width="419px" height="479px" className="w-1/4 hidden sm:block"/>
+        <div className="w-1/4 h-96 hidden sm:block">
+          <Lazy src={imgBeach} alt="praia" wxs="full" hxs="full" />
+        </div>
 
       </section>
 
@@ -156,7 +159,7 @@ const Home = () => {
 
       </section>
 
-      <section className="premium-service py-16 px-4 sm:px-24 flex flex-col sm:flex-row justify-between gap-24 sm:gap-0">
+      <section className="premium-service py-16 px-4 sm:px-24 flex flex-col sm:flex-row justify-between gap-24 sm:gap-0 items-center">
 
         <div className="sm:w-2/4 flex flex-col gap-6">
           <div className="flex flex-col gap-6">
@@ -172,14 +175,18 @@ const Home = () => {
 
           </div>
         </div>
-
-        <img src={imgNature} alt="" />
+        
+        <div className="w-4/5 h-96 sm:w-96 sm:h-100">
+          <Lazy src={imgNature} alt="premium" wxs="full" hxs="full" />
+        </div>
 
       </section>
 
-      <section className="plans flex flex-col-reverse sm:flex-row  px-4 sm:px-24 py-24 gap-24">
-
-        <img src={imgFolha} alt="" className="sm:w-2/5 rounded-2xl" />
+      <section className="plans flex flex-col-reverse items-center sm:items-start sm:flex-row px-4 sm:px-24 py-24 gap-24">
+        
+        <div className="w-64 h-64 sm:w-100 sm:h-100 rounded-2xl">
+          <Lazy src={imgFolha} alt="planos" wxs="64" hxs="64" wsm="100" hsm="100" />
+        </div>
 
         <div className="flex flex-col gap-6">
           <h1 className="text-4xl font-semibold text-center sm:text-start">Veja todos os nossos planos e aproveite</h1>
@@ -191,19 +198,18 @@ const Home = () => {
         
       </section>
       
-      <section className="clients px-24 py-12 overflow-hidden">
+      <section className="clients sm:px-24 py-12 overflow-hidden">
 
-        <h1 className="text-3xl font-semibold text-center mb-16">O que nossos clientes falam</h1>
+        <h1 className="text-3xl font-semibold text-center mb-16 px-4 sm:px-0">O que nossos clientes falam</h1>
 
-        <div className="relative overflow-auto h-100">
+        <div 
+          className="container-clients relative overflow-scroll h-100 w-screen sm:-ml-24" 
+          onMouseDown={(e) => handleMouseDown(e)} 
+          onMouseUp={() => handleMouseUp()} 
+          onMouseMove={(e) => handleMouseMove(e)}
+        >
 
-          <div 
-            className="flex absolute items-center h-full gap-14 cursor-grab left-0" 
-            ref={containerClients} 
-            onMouseDown={(e) => grab(e)} 
-            onMouseUp={() => hovering()} 
-            onMouseMove={(e) => moveSlide(e)}
-          >
+          <div className="flex absolute items-center h-full gap-14 cursor-grab left-0 px-10 sm:px-24" ref={containerClients}>
             <CardClient name="Saori Souza" desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, nihil quis officia ipsa facere labore modi maxime incidunt accusamus ratione eum eaque? Quam inventore error voluptatem nulla dolor ex minus" src={imgSaori} starCount="50%" />
             <CardClient name="Saori Souza" desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, nihil quis officia ipsa facere labore modi maxime incidunt accusamus ratione eum eaque? Quam inventore error voluptatem nulla dolor ex minus" src={imgSaori} starCount="20%" />
             <CardClient name="Saori Souza" desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, nihil quis officia ipsa facere labore modi maxime incidunt accusamus ratione eum eaque? Quam inventore error voluptatem nulla dolor ex minus" src={imgSaori} starCount="100%" />
@@ -233,13 +239,13 @@ const Home = () => {
 
       </section>
 
-      <footer className="bg-slate-950 text-white flex justify-between items-start py-32 px-16">
+      <footer className="bg-slate-950 text-white flex flex-col gap-20 justify-between items-center sm:items-start py-32 px-16">
 
         <img src={whiteLogo} alt="logo" />
 
-        <div className="flex gap-16">
+        <div className="flex gap-16 flex-col">
           
-          <ul className="text-lg">
+          <ul className="text-lg text-center">
             <h1 className="font-semibold mb-3">Companhia</h1>
             <li className="font-light">Sobre Nós</li>
             <li className="font-light">Blog</li>
@@ -247,14 +253,14 @@ const Home = () => {
             <li className="font-light">Comunidade</li>
           </ul>
 
-          <ul className="text-lg">
+          <ul className="text-lg text-center">
             <h1 className="font-semibold mb-3">Ajuda</h1>
             <li className="font-light">FAQ</li>
             <li className="font-light">Suporte</li>
             <li className="font-light">Política De Uso</li>
           </ul>
 
-          <ul className="text-lg">
+          <ul className="text-lg text-center">
             <h1 className="font-semibold mb-3">Nos Siga</h1>
             <li className="flex items-center gap-2"><BsFacebook /> Facebook</li>
             <li className="flex items-center gap-2"><BsInstagram /> Instagram</li>

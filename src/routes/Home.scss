@@ -41,6 +41,12 @@ div.presentation {
   left: 0;
 }
 
+section.clients {
+  div.container-clients::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @media (max-width: 639px) {
   form {
     width: 100% !important;
