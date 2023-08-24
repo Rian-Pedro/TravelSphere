@@ -1,5 +1,32 @@
 header {
   box-shadow: 0px 0px 15px 1px #c3c3c380;
+
+  nav {
+    ul {
+      li {
+        p.link-menu {
+
+          cursor: pointer;
+          overflow: hidden;
+          
+          &:hover::after {
+            left: 0;
+          }
+          
+          &::after {
+            content: "";
+            transition: left .2s;
+            width: 100%;
+            height: 2px;
+            background-color: #00ACC1;
+            display: block;
+            position: relative;
+            left: -100%;
+          }
+        }
+      }
+    }
+  }
 }
 
 div.btn {
@@ -15,5 +42,17 @@ div.btn {
   div:nth-child(1):hover {
     color: #94A0A6;
     border: 1px solid #94A0A6;
+  }
+}
+
+div.drop, div.drop-mobile {
+
+  li {
+    transition: all 75ms;
+
+    &:hover {
+      background-color: #94A0A6;
+      color: #fff;
+    }
   }
 }

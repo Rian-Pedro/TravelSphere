@@ -18,10 +18,22 @@ export default {
       },
       height: {
         "100": "30rem",
-        "base": "2rem"
+        "base": "2rem",
+        "fullplus": "calc(100% + 5rem)",
+        "5%": "5%",
+        "95%": "95%"
       },
       minWidth: {
-        "min-w-2/4": "50%"
+        "min-w-2/4": "50%",
+      },
+      minHeight: {
+        "min-h-10": "2.5rem"
+      },
+      spacing: {
+        "fullplus": "210%"
+      },
+      transitionDuration: {
+        "base": ".5s"
       },
       colors: {
         blue1: "#00ACC1",
