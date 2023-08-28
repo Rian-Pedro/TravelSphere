@@ -182,7 +182,7 @@ const Home = () => {
 
       </section>
 
-      <section className="plans flex flex-col-reverse items-center sm:items-start lg:flex-row px-4 sm:px-24 py-24 gap-24 xl:w-3/4 mx-auto">
+      <section className="plans flex flex-col-reverse items-center sm:items-start lg:flex-row px-4 sm:px-24 py-24 gap-24 2xl:w-3/4 mx-auto">
         
         <div className="w-64 h-64 sm:w-100 sm:h-100 rounded-2xl">
           <Lazy src={imgFolha} alt="planos" wxs="64" hxs="64" wsm="100" hsm="100" />
