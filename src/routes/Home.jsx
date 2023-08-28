@@ -159,9 +159,9 @@ const Home = () => {
 
       </section>
 
-      <section className="premium-service py-16 px-4 sm:px-24 flex flex-col sm:flex-row justify-between gap-24 sm:gap-0 items-center">
+      <section className="premium-service py-16 px-4 sm:px-24 flex flex-col xl:flex-row justify-between gap-24 xl:gap-0 xl:w-4/5 items-center mx-auto">
 
-        <div className="sm:w-2/4 flex flex-col gap-6">
+        <div className="xl:w-2/4 flex flex-col gap-6">
           <div className="flex flex-col gap-6">
             <h1 className="text-center sm:text-start text-3xl font-semibold">Participe de nosso serviço de viagens premium</h1>
             <p className="text-center sm:text-start text-gray1 text-base font-semibold">Locais perfeitos para fotos e encontros inesquecíveis. Encontre o seu pedaço de paraíso, com tranquilidade para aproveitar as férias.</p>
@@ -182,7 +182,7 @@ const Home = () => {
 
       </section>
 
-      <section className="plans flex flex-col-reverse items-center sm:items-start sm:flex-row px-4 sm:px-24 py-24 gap-24">
+      <section className="plans flex flex-col-reverse items-center sm:items-start lg:flex-row px-4 sm:px-24 py-24 gap-24 xl:w-3/4 mx-auto">
         
         <div className="w-64 h-64 sm:w-100 sm:h-100 rounded-2xl">
           <Lazy src={imgFolha} alt="planos" wxs="64" hxs="64" wsm="100" hsm="100" />

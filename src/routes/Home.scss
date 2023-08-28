@@ -34,6 +34,10 @@ div.presentation {
   }
 }
 
+section:not(.newsletter):not(.most-popular):not(.clients) {
+  height: 100vh;
+}
+
 .carrossel-container {
   transition: left .5s ease-in-out;
   left: 0;
