@@ -159,7 +159,7 @@ const Home = () => {
 
       </section>
 
-      <section className="premium-service py-16 px-4 sm:px-24 flex flex-col xl:flex-row justify-between gap-24 xl:gap-0 xl:w-4/5 items-center mx-auto">
+      <section className="premium-service py-16 px-4 sm:px-24 flex flex-col xl:flex-row justify-between gap-24 xl:gap-0 2xl:w-4/5 items-center mx-auto">
 
         <div className="xl:w-2/4 flex flex-col gap-6">
           <div className="flex flex-col gap-6">
