@@ -57,7 +57,7 @@ const Home = () => {
 
       <section className="min-h-screen flex flex-col sm:flex-row w-full justify-around items-center">
 
-        <div className="presentation p-4 sm:p-0 sm:w-2/5 flex flex-col sm:gap-9 gap-10">
+        <div className="presentation p-4 sm:p-0 md:w-4/5 lg:w-2/5 flex flex-col sm:gap-9 gap-10">
 
           <div className="title-container w-full flex flex-col sm:gap-8 gap-12">
             <div className="title">
@@ -110,7 +110,7 @@ const Home = () => {
 
         </div>
 
-        <div className="w-1/4 h-96 hidden sm:block">
+        <div className="w-1/4 h-96 hidden lg:block">
           <Lazy src={imgBeach} alt="praia" wxs="full" hxs="full" />
         </div>
 

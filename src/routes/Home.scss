@@ -28,8 +28,6 @@ div.presentation {
 
   form {
 
-    width: 115%;
-
     input {
       width: 110%;
     }
@@ -50,5 +48,29 @@ section.clients {
 @media (max-width: 639px) {
   form {
     width: 100% !important;
+  }
+}
+
+@media (min-width: 1023px) and (max-width: 1279px) {
+  form {
+    width: 115%;
+
+    input {
+      width: 60% !important;
+    }
+  }
+}
+
+@media (min-width: 1279px) {
+  form {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1279px) and (max-width: 1300px) {
+  form {
+    input {
+      width: 80% !important;
+    }
   }
 }
